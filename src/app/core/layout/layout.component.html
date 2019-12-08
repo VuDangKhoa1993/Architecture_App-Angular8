@@ -1,0 +1,14 @@
+  <ng-container *ngIf="(currentUser$ | async) as currentUser">
+    
+    <app-toolbar [currentUser]="currentUser" (toggle)="toggleSideBar($event)" (logout)="logout()"></app-toolbar>
+    
+    <app-sidenav #sidebar [currentUser]="currentUser">
+      <div class="container" style="height: 100vh">
+          <app-alert></app-alert>
+          <router-outlet></router-outlet>
+        </div>
+  </app-sidenav>
+  </ng-container>
+
+
+  
