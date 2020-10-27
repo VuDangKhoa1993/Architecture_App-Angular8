@@ -32,7 +32,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/web/home'
+    redirectTo: '/web/welcome-fitness'
   }
 ];
 

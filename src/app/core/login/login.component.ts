@@ -25,12 +25,12 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     // redirect user to home page if user has logged in.
     if (this.authenticationService.getCurrentUser()) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/web/welcome-fitness']);
     }
     this.createForm();
 
     // get returnUrl from router params or default to '/home'
-    this.returnUrl = this.activatedRouter.snapshot.queryParams['returnUrl'] || '/home';
+    this.returnUrl = this.activatedRouter.snapshot.queryParams.returnUrl || '/welcome-fitness';
   }
 
   get f() {
@@ -66,6 +66,4 @@ export class LoginComponent implements OnInit {
         this.loading = false;
       });
   }
-
-
 }
