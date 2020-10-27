@@ -6,21 +6,21 @@ import { tap } from 'rxjs/operators';
 @Component({
   selector: 'app-alert',
   templateUrl: './alert.component.html',
-  styleUrls: ['./alert.component.scss']
+  styleUrls: ['./alert.component.scss'],
 })
 export class AlertComponent implements OnInit {
   message$: Observable<any>;
 
-  constructor(private alertService: AlertService) { }
+  constructor(private alertService: AlertService) {}
 
   ngOnInit() {
     this.message$ = this.alertService.message$.pipe(
-      tap(message => {
-        switch(message && message.type) {
-          case 'success': 
+      tap((message) => {
+        switch (message && message.type) {
+          case 'success':
             message.cssClass = 'alert alert-success';
             break;
-          case 'error': 
+          case 'error':
             message.cssClass = 'alert alert-error';
             break;
         }

@@ -12,6 +12,10 @@
   .mat-button {
     font-size: 2rem;
     margin: 0 1.8rem;
+    text-transform: uppercase;
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   .btn-join-container {
