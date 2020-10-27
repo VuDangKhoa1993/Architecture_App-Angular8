@@ -20,7 +20,7 @@ export class AuthenticationService {
   getCurrentUser(): User {
     return this.currentUserSubject.value;
   }
-  
+
   login(username, password): Observable<any> {
     return this.httpClient.post<any>(`${environment.apiUrl}/users/authenticate`, { username, password }).pipe(
       map((user: User) => {
@@ -28,7 +28,7 @@ export class AuthenticationService {
         if (user && user.token) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('currentUser', JSON.stringify(user));
-          this.currentUserSubject.next(user)
+          this.currentUserSubject.next(user);
         }
         return user;
       })

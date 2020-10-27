@@ -1,20 +1,10 @@
-<mat-toolbar color="accent" *ngIf="currentUser">
-  <mat-toolbar-row>
-    <button mat-icon-button>
+<p>
+  <mat-toolbar>
+    <button mat-icon-button >
       <mat-icon (click)="toggleSideBar()">menu</mat-icon>
     </button>
-    <h1>Angular 8 Data Structure</h1>
+    <span>Angular Structure Demo</span>
     <span class="menu-spacer"></span>
-    <div>
-      <a mat-button [routerLink]="[{outlets: { primary: ['/'], web: ['/web/home'] }}]">Home</a>
-      <a mat-button [routerLink]="['/web/admin']" *ngIf="currentUser.role === admin">Admin</a>
-      <a mat-button [routerLink]="['/web/dashboard']"> Dashboard </a>
-      <a mat-button [routerLink]="'/create-account'"> Create Account </a>
-      <a mat-button [routerLink]="'/contacts'"> Contacts </a>
-      <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
-      <a mat-button [routerLink]="'/activities'"> Activities </a>
-      <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
-      <a mat-button (click)="this.logout.emit()">Logout</a>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+    <a mat-button (click)="this.logout.emit()">Logout</a>
+  </mat-toolbar>
+</p>

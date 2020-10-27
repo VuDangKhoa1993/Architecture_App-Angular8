@@ -42,11 +42,11 @@ export class RatingInputComponent implements OnInit, ControlValueAccessor {
   // Function to call when the rating changes
   onChange = (rating: number) => {
     console.log(rating);
-  };
+  }
 
   // Function to call when the input is touched (when a star is clicked)
   onTouched = () => {
-    console.log(this.value)
+    console.log(this.value);
   }
 
   // Allow Angular to update the model (rating)

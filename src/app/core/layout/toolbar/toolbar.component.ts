@@ -1,11 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { User, Role } from '@app/shared/common';
 
 
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss']
+  styleUrls: ['./toolbar.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class ToolbarComponent implements OnInit {
   // tslint:disable-next-line: no-input-rename
@@ -22,5 +23,4 @@ export class ToolbarComponent implements OnInit {
   toggleSideBar() {
     this.toggle.emit();
   }
-
 }

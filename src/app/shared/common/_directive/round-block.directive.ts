@@ -1,26 +1,36 @@
-import { Renderer2, ElementRef, Directive, OnInit, Input } from '@angular/core';
+import { Renderer2, ElementRef, Directive, OnInit, Input, HostListener, HostBinding } from '@angular/core';
 
 @Directive({
   selector: '[appRoundBlock]'
 })
 export class RoundBlockDirective implements OnInit {
   @Input() appRoundBlock: string;
+  @Input() className: string;
+  @Input() styleName: string;
+
   constructor(
      private renderer2: Renderer2,
      private elementRef: ElementRef
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
-    this.renderer2.setStyle(this.elementRef.nativeElement, 'border-radius', this.appRoundBlock);
-    this.renderer2.addClass(this.elementRef.nativeElement, 'change-bg-color');
-    this.renderer2.listen(this.elementRef.nativeElement, 'click', (event) => {
-      this.elementRef.nativeElement.classList.toggle('change-bg-color');
-    });
-    // or
-    // this.elementRef.nativeElement.addEventListener('click', function(event) {
-    //   this.classList.toggle('change-bg-color');
-    // });
+    this.initialize();
   }
 
+  @HostListener('click') onClick() {
+    this.elementRef.nativeElement.classList.toggle(this.className);
+  }
+
+  private setStyles(style: string, value: string) {
+    this.renderer2.setStyle(this.elementRef.nativeElement, style, value);
+  }
+
+  private setClass(className: string) {
+    this.renderer2.addClass(this.elementRef.nativeElement, className);
+  }
+
+  private initialize() {
+    this.setStyles(this.styleName, this.appRoundBlock);
+    this.setClass(this.className);
+  }
 }
