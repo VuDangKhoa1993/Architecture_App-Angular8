@@ -1,0 +1,30 @@
+:host .bg-image {
+  position: relative;
+  height: 100vh;
+  filter: blur(0.3rem);
+  -webkit-filter: blur(0.3rem);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://wallpaperaccess.com/full/1633729.jpg");
+}
+
+.fitness-wapper {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 6rem;
+  padding: 2rem 0.5rem;
+  width: -moz-fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+
+
+

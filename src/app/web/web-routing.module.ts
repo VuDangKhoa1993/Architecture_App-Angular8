@@ -5,6 +5,7 @@ import { AuthGuard } from '@app/shared/common/_helper';
 import { AdminComponent } from './admin';
 import { Role } from '@app/shared/common/_model';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { WelcomeFitnessComponent } from './welcome-fitness';
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'welcome-fitness',
         pathMatch: 'full'
       },
       {
@@ -35,6 +36,11 @@ const routes: Routes = [
         // if admin module exist then canActivateChild will be run.
         canActivate: [AuthGuard],
         canActivateChild: [AuthGuard]
+      },
+      {
+        path: 'welcome-fitness',
+        component: WelcomeFitnessComponent,
+        canActivate: [AuthGuard]
       }
     ]
   },

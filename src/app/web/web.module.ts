@@ -6,13 +6,15 @@ import { SharedModule } from '@app/shared/shared.module';
 import { WebRoutingModule } from './web-routing.module';
 import { ContactComponent } from './contact/contact.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { WelcomeFitnessComponent } from './welcome-fitness/welcome-fitness.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     AdminComponent,
     ContactComponent,
-    DashboardComponent
+    DashboardComponent,
+    WelcomeFitnessComponent
   ],
   imports: [
     CommonModule,

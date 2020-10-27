@@ -10,7 +10,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-  currentUser$: Observable<User>;
+  public currentUser$: Observable<User>;
   @ViewChild('sidebar') sidebar: SidenavComponent;
 
   constructor(
@@ -22,13 +22,12 @@ export class LayoutComponent implements OnInit {
     this.currentUser$ = this.authenticationService.currentUser$;
   }
 
-  logout() {
+  public logout() {
     this.authenticationService.logout();
     this.router.navigate(['/login']);
   }
 
-  toggleSideBar() {
+  public toggleSideBar() {
     this.sidebar.toggleSideNav();
   }
-
 }

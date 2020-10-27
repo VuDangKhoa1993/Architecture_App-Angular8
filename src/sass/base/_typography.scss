@@ -1,5 +1,5 @@
 body {
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     font-weight: 400;
     line-height: 140%;
     color: $color-grey-dark;
@@ -22,7 +22,7 @@ body {
             animation-duration: 2s;
             animation-delay: 0.5s;
             animation-timing-function: ease-in;
-        }   
+        }
         &--sub {
             font-size: 2.2rem;
             letter-spacing: 1.3rem;
@@ -58,6 +58,22 @@ body {
         font-weight: 500;
         color: $color-grey-dark-3;
         letter-spacing: 0.1rem;
+    }
+
+    &-fourth {
+      font-size: 7.8rem;;
+      color: $color-white;
+      font-weight: 500;
+      text-transform: capitalize;
+      letter-spacing: 0.2rem;
+      word-spacing: 0.7rem;
+    }
+
+    &-fifth {
+      color: $color-white;
+      font-size: 3.5rem;
+      text-transform: capitalize;
+      font-weight: 500;
     }
 }
 

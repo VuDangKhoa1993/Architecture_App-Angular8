@@ -1,10 +1,22 @@
-<p>
   <mat-toolbar>
-    <button mat-icon-button >
-      <mat-icon (click)="toggleSideBar()">menu</mat-icon>
-    </button>
-    <span>Angular Structure Demo</span>
-    <span class="menu-spacer"></span>
-    <a mat-button (click)="this.logout.emit()">Logout</a>
+    <mat-toolbar-row>
+      <button mat-icon-button >
+        <mat-icon (click)="toggleSideBar()">fitness_center</mat-icon>
+      </button>
+      <h1>The New Gym</h1>
+      <span class="menu-spacer"></span>
+      <a mat-button >About</a>
+      <a mat-button >Facilities</a>
+      <a mat-button >Services</a>
+      <a mat-button >Membership</a>
+      <a mat-button >Services</a>
+      <a mat-button (click)="this.logout.emit()" [ngStyle]="{'color': '#c4306b'}">
+        <mat-icon >account_circle</mat-icon>
+        {{ currentUser.username }}
+      </a>
+      <span class="menu-spacer"></span>
+      <div class="btn-join-container">
+        <span class="btn-join-text">Join Now</span>
+      </div>
+    </mat-toolbar-row>
   </mat-toolbar>
-</p>
