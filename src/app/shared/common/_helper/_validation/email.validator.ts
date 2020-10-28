@@ -9,7 +9,7 @@ export function emailDomainValidator(control: FormControl): { [key: string]: obj
                 emailDomain: {
                     parsedDomain: domain
                 }
-            }
+            };
         }
     }
     return null;

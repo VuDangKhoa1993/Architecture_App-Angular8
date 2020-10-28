@@ -24,6 +24,7 @@
     "@grapecity/spread-excelio": "^13.0.0",
     "@grapecity/spread-sheets-angular": "^13.0.0",
     "@grapecity/spread-sheets-charts": "^13.0.0",
+    "aos": "^2.3.4",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
     "file-saver": "^2.0.2",

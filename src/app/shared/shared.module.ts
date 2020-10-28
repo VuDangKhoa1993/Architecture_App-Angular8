@@ -1,69 +1,89 @@
 import { NgModule } from '@angular/core';
-import { AlertComponent, ErrorInterceptor, JWTInterceptor, fakeBackendProvider } from './common';
+import {
+  AlertComponent,
+  ErrorInterceptor,
+  JWTInterceptor,
+  fakeBackendProvider,
+} from './common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
 import { CommonModule } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatCardModule } from '@angular/material';
-import { SpreadSheetsModule } from "@grapecity/spread-sheets-angular";
+import {
+  MatToolbarModule,
+  MatIconModule,
+  MatSidenavModule,
+  MatListModule,
+  MatButtonModule,
+  MatCardModule,
+} from '@angular/material';
+import { SpreadSheetsModule } from '@grapecity/spread-sheets-angular';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { RoundBlockDirective } from './common/_directive/round-block.directive';
 import { RatingInputComponent } from './common/_component/rating-input/rating-input.component';
+import { AnimateDirective } from './common/_directive/animate.directive';
+import { ScrollAnimateDirective } from './common/_directive/scroll-animate.directive';
+
+const MaterialModules = [
+  MatSliderModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatSidenavModule,
+  MatListModule,
+  MatButtonModule,
+  MatCardModule,
+];
+
+const components = [
+  AlertComponent,
+  RatingInputComponent,
+];
+
+const directives = [
+  RoundBlockDirective,
+  AnimateDirective,
+  ScrollAnimateDirective
+];
+
+const AngularModules = [
+  FormsModule,
+  ReactiveFormsModule,
+  HttpClientModule,
+  SpreadSheetsModule,
+  DragDropModule
+];
 
 
 @NgModule({
   declarations: [
-    AlertComponent,
-    RoundBlockDirective,
-    RatingInputComponent
+    ...directives,
+    ...components
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatSliderModule,
-    HttpClientModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule,
-    MatCardModule,
-    SpreadSheetsModule,
-    DragDropModule
+    ...AngularModules,
+    ...MaterialModules
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
-      multi: true
+      multi: true,
     },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JWTInterceptor,
-      multi: true
+      multi: true,
     },
-    fakeBackendProvider
+    fakeBackendProvider,
   ],
   exports: [
-    AlertComponent,
-    RatingInputComponent,
-    FormsModule,
-    HttpClientModule,
-    RoundBlockDirective,
-    SpreadSheetsModule,
-    ReactiveFormsModule,
-    MatSliderModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule,
-    DragDropModule,
-    MatCardModule
-  ]
+    ...AngularModules,
+    ...components,
+    ...MaterialModules,
+    ...directives,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

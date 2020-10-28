@@ -3,7 +3,7 @@
       <app-toolbar [currentUser]="currentUser" (toggle)="toggleSideBar($event)" (logout)="logout()"></app-toolbar>
     </div>
     <app-sidenav #sidebar [currentUser]="currentUser">
-      <div class="container-fluid px-0" >
+      <div class="container-fluid px-0">
           <app-alert></app-alert>
           <router-outlet></router-outlet>
         </div>
