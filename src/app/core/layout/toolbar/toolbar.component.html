@@ -9,8 +9,7 @@
       <a mat-button >Facilities</a>
       <a mat-button >Services</a>
       <a mat-button >Membership</a>
-      <a mat-button >Services</a>
-      <a mat-button (click)="this.logout.emit()" [ngStyle]="{'color': '#c4306b'}">
+      <a mat-button (click)="this.logout.emit()" class="logout">
         <mat-icon >account_circle</mat-icon>
         {{ currentUser.username }}
       </a>
