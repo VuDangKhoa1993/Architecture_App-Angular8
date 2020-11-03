@@ -23,7 +23,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { RoundBlockDirective } from './common/_directive/round-block.directive';
 import { RatingInputComponent } from './common/_component/rating-input/rating-input.component';
 import { AnimateDirective } from './common/_directive/animate.directive';
-import { ScrollAnimateDirective } from './common/_directive/scroll-animate.directive';
+import { ScrollToViewDirective } from './common/_directive/scroll-to-view.directive';
 
 const MaterialModules = [
   MatSliderModule,
@@ -44,7 +44,7 @@ const components = [
 const directives = [
   RoundBlockDirective,
   AnimateDirective,
-  ScrollAnimateDirective
+  ScrollToViewDirective
 ];
 
 const AngularModules = [

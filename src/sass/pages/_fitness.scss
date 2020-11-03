@@ -15,28 +15,27 @@
 
   .fitness-wapper {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    line-height: 6rem;
-    padding: 2rem 0.5rem;
-    width: -moz-fit-content;
+    line-height: 1.75rem;
+    height: 25rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: fit-content;
+    justify-content: space-around;
   }
 }
 
 .advertising {
-  height: 80vh;
+  height: 100vh;
   position: relative;
+  z-index: 1;
   &-container {
     position: absolute;
     width: 80%;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -57,12 +56,46 @@
     &:nth-child(2), &:nth-child(3) {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
       .paragraph {
-        width: 50%;
-        margin: 0 auto;
+        font-weight: 300;
+        color: #000;
       }
     }
+    &--content {
+      text-align: justify;
+      margin: 0 auto;
+      width: 80%;
+    }
   }
+}
+
+.services {
+    height: 80vh;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background: #c4306b;
+    &-header {
+      width: 50%;
+      text-align: center;
+      .paragraph {
+        color: #fff;
+        margin: 1rem 0;
+      }
+    }
+    &-picture-list {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &-picture-items {
+      height: 40rem;
+      width: 100%;
+      overflow: hidden;
+    }
 }

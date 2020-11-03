@@ -1,9 +1,9 @@
 import { Directive, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appScrollAnimate]',
+  selector: '[appScrollToView]',
 })
-export class ScrollAnimateDirective {
+export class ScrollToViewDirective {
   /*
     There are 4 the ways to listen window scrolling event
     1. using rendered2 with the listen method.
