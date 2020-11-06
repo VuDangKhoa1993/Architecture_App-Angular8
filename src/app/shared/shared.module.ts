@@ -4,6 +4,7 @@ import {
   ErrorInterceptor,
   JWTInterceptor,
   fakeBackendProvider,
+  PasswordMatchingValidatorDirective,
 } from './common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,6 +25,7 @@ import { RoundBlockDirective } from './common/_directive/round-block.directive';
 import { RatingInputComponent } from './common/_component/rating-input/rating-input.component';
 import { AnimateDirective } from './common/_directive/animate.directive';
 import { ScrollToViewDirective } from './common/_directive/scroll-to-view.directive';
+import { ValidInputComponent } from './common/_component/valid-input/valid-input.component';
 
 const MaterialModules = [
   MatSliderModule,
@@ -39,12 +41,14 @@ const MaterialModules = [
 const components = [
   AlertComponent,
   RatingInputComponent,
+  ValidInputComponent
 ];
 
 const directives = [
   RoundBlockDirective,
   AnimateDirective,
-  ScrollToViewDirective
+  ScrollToViewDirective,
+  PasswordMatchingValidatorDirective
 ];
 
 const AngularModules = [
