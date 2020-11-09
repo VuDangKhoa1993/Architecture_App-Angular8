@@ -26,6 +26,7 @@ import { RatingInputComponent } from './common/_component/rating-input/rating-in
 import { AnimateDirective } from './common/_directive/animate.directive';
 import { ScrollToViewDirective } from './common/_directive/scroll-to-view.directive';
 import { ValidInputComponent } from './common/_component/valid-input/valid-input.component';
+import { BackgroundAnimateDirective } from './common/_directive/background-animation.directive';
 
 const MaterialModules = [
   MatSliderModule,
@@ -48,7 +49,8 @@ const directives = [
   RoundBlockDirective,
   AnimateDirective,
   ScrollToViewDirective,
-  PasswordMatchingValidatorDirective
+  PasswordMatchingValidatorDirective,
+  BackgroundAnimateDirective
 ];
 
 const AngularModules = [

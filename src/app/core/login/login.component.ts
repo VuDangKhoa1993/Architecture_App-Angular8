@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { first } from 'rxjs/operators';
+import { debounceTime, first } from 'rxjs/operators';
 import { AuthenticationService, AlertService } from '@app/shared/common/_service';
 
 @Component({
@@ -10,10 +10,27 @@ import { AuthenticationService, AlertService } from '@app/shared/common/_service
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
-  returnUrl: string;
-  submitted = false;
-  loading = false;
+  public loginForm: FormGroup;
+  public returnUrl: string;
+  public submitted = false;
+  public loading = false;
+  public backgroundImages = [
+    `
+    linear-gradient(rgba(32, 32, 32, 0.4), rgba(49, 48, 48, 0.8)),
+      url('https://images.hdqwalls.com/download/fitness-gym-girl-nb-1920x1080.jpg')`,
+    `
+    linear-gradient(rgba(32, 32, 32, 0.4), rgba(49, 48, 48, 0.8)),
+      url('https://images7.alphacoders.com/692/thumb-1920-692042.jpg')
+    `,
+    `
+    linear-gradient(rgba(32, 32, 32, 0.4), rgba(49, 48, 48, 0.8)),
+      url('https://cdn.wallpapersafari.com/63/30/0eVMPo.jpg')
+    `,
+    `
+    linear-gradient(rgba(32, 32, 32, 0.4), rgba(49, 48, 48, 0.8)),
+      url(' https://eskipaper.com/images/gym-wallpaper-3.jpg')
+    `
+  ];
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -53,7 +70,11 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authenticationService.login(this.f.username.value, this.f.password.value).pipe(first())
+    this.authenticationService.login(this.f.username.value, this.f.password.value)
+    .pipe(
+      debounceTime(2000),
+      first(),
+      )
       .subscribe(res => {
         if (res) {
           this.router.navigate([this.returnUrl]);
