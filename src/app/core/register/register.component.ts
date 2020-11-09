@@ -14,39 +14,6 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.initForm();
-
-    this.test();
-  }
-
-  test() {
-    // tslint:disable-next-line:one-variable-per-declaration
-    let obsValue, promiseValue;
-    // from([1, 2, 3, 4]).pipe(map(val => val * 2)).subscribe(val => obsValue = val);
-    interval(1000).pipe(map(val => val * 2)).subscribe(val => {
-      obsValue = val;
-      console.log('observable run');
-    });
-    Promise.resolve([1, 2, 3, 4]).then(arr => {
-      arr.forEach(value => promiseValue = value * 2);
-      console.log('promise run');
-    });
-    console.log(obsValue, promiseValue);
-    setTimeout(() => {
-      console.log(obsValue, promiseValue);
-    }, 0);
-
-
-    // output
-    /*
-      undefined undefined
-      promise run
-      undefined, 8,
-      observable run,
-      observable run
-      observable run
-      observable run
-    */
-
   }
 
   private initForm() {
