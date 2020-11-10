@@ -63,7 +63,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-
     // stopped if login form is invalid
     if (this.loginForm.invalid) {
       return;
@@ -81,7 +80,8 @@ export class LoginComponent implements OnInit {
         }
       }, error => {
         // call alert service to emit error message.
-        this.alertService.error(error, false);
+        this.loginForm.setErrors({ usernameOrPasswordIncorrect: error });
+        // this.alertService.error(error, false);
         this.loading = false;
       });
   }

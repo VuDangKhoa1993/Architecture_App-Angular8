@@ -1,29 +1,29 @@
+$breakpoint-mobile: 768px;
 .login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  min-width: 1024px;
-  width: 100%;
-  height: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
   background-size: cover;
-  background-image: linear-gradient(rgba(32, 32, 32, 0.4), rgba(49, 48, 48, 0.8)),
-              url('https://fitnessmedia.azureedge.net/media/4183/shutterstock_721723381-gym-setting-1920-x-1080-compressed.jpg');
+  background-image: linear-gradient(
+      rgba(32, 32, 32, 0.4),
+      rgba(49, 48, 48, 0.8)
+    ),
+    url("https://fitnessmedia.azureedge.net/media/4183/shutterstock_721723381-gym-setting-1920-x-1080-compressed.jpg");
   transition: background-image 1s ease-in;
 
   .login-form {
     height: 70vh;
     background: rgba($color: #000000, $alpha: 0.3);
     width: 50rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
     box-shadow: 1rem 1.5rem 1.5rem rgba($color: #535353, $alpha: 0.5);
-    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media (max-width: $breakpoint-mobile) {
+      width: 80%;
+    }
     .login-header {
       font-size: 3rem;
       text-transform: capitalize;
@@ -43,12 +43,21 @@
           font-size: 1.2rem;
           font-weight: 300;
           text-transform: capitalize;
+          &.invalid-text {
+            color: rgb(245, 52, 34);
+          }
         }
         .login-form-input {
           padding: 0.8rem 1rem;
           margin: 1rem 1.2rem;
           font-size: 1.4rem;
           width: 80%;
+          &:focus {
+            outline: none;
+          }
+          &.ng-invalid {
+            border: 1px solid rgb(245, 52, 34);
+          }
         }
         .btn-link {
           &,
@@ -70,7 +79,10 @@
             width: 80%;
             display: inline-block;
             padding: 1rem 1.5rem;
-            background: linear-gradient(rgba(0, 153, 255, 0.5), rgba(0, 138, 230, 0.9));
+            background: linear-gradient(
+              rgba(0, 153, 255, 0.5),
+              rgba(0, 138, 230, 0.9)
+            );
             color: #fff;
             font-size: 1.4rem;
             text-transform: uppercase;

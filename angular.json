@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "repeat-angular8": {
+    "the-new-gym": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/repeat-angular8",
+            "outputPath": "dist/the-new-gym",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -74,18 +74,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "repeat-angular8:build"
+            "browserTarget": "the-new-gym:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "repeat-angular8:build:production"
+              "browserTarget": "the-new-gym:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "repeat-angular8:build"
+            "browserTarget": "the-new-gym:build"
           }
         },
         "test": {
@@ -120,7 +120,7 @@
         }
       }
     },
-    "repeat-angular8-e2e": {
+    "the-new-gym-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -129,11 +129,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "repeat-angular8:serve"
+            "devServerTarget": "the-new-gym:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "repeat-angular8:serve:production"
+              "devServerTarget": "the-new-gym:serve:production"
             }
           }
         },
@@ -149,5 +149,5 @@
       }
     }
   },
-  "defaultProject": "repeat-angular8"
+  "defaultProject": "the-new-gym"
 }

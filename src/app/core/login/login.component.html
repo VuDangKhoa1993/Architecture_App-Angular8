@@ -1,18 +1,24 @@
-<div class="login-container" appBackgroundAnimation [bgImages]="backgroundImages">
+<div class="login-container">
+  <!-- <div class="login-container" appBackgroundAnimation [bgImages]="backgroundImages" (enterEventHandler)="onSubmit()"> -->
   <div class="login-form">
     <h2 class="login-header">Login Form</h2>
     <div class="login-body">
       <form [formGroup]="loginForm">
         <div class="login-form-group">
-          <input type="text" class="login-form-input" placeholder="Username" formControlName="username" [ngClass]="{'is-invalid': submitted && f.username.errors }"/>
-          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <p *ngIf="f.username.errors.required">Usernme is required</p>
+          <div *ngIf="loginForm.errors" class="invalid-feedback" [ngStyle]="{'display': 'inline-block'}">
+            <p *ngIf="loginForm.errors.usernameOrPasswordIncorrect" class="invalid-text">{{ loginForm.errors.usernameOrPasswordIncorrect }}</p>
           </div>
         </div>
         <div class="login-form-group">
-          <input type="password" class="login-form-input" placeholder="Password" formControlName="password" [ngClass]="{'is-invalid': submitted && f.password.errors }"/>
-          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <p *ngIf="f.password.errors.required">Password is required</p>
+          <input type="text" class="login-form-input" placeholder="Username" formControlName="username" [ngClass]="{'is-invalid': f.username.dirty && f.username.touched && f.username.errors }"/>
+          <div *ngIf="f.username.dirty && f.username.touched && f.username.errors" class="invalid-feedback" [ngStyle]="{'display': 'inline-block'}">
+            <p *ngIf="f.username.errors.required" class="invalid-text">Username is required</p>
+          </div>
+        </div>
+        <div class="login-form-group">
+          <input type="password" class="login-form-input" placeholder="Password" formControlName="password" [ngClass]="{'is-invalid': f.password.dirty && f.password.touched && f.password.errors }"/>
+          <div *ngIf="f.password.dirty && f.password.touched && f.password.errors" class="invalid-feedback" [ngStyle]="{'display': 'inline-block'}">
+            <p *ngIf="f.password.errors.required"  class="invalid-text">Password is required</p>
           </div>
         </div>
         <div class="login-form-group">
