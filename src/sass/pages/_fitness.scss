@@ -24,6 +24,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    @media (max-width: 767px) {
+      width: 80%;
+      top: 35%;
+      height: 12rem;
+    }
   }
 }
 
@@ -181,7 +186,7 @@
               margin-top: 0;
             }
             &:last-child {
-              margin-bottom: 0;;
+              margin-bottom: 0;
             }
             .sub-menu-links {
               font-size: 2rem;
@@ -195,6 +200,88 @@
       &-bottom {
         padding: 0.5rem 1rem;
         text-align: center;
+      }
+    }
+  }
+}
+
+@media (min-width: 300px) and (max-width: 576px) {
+  .advertising {
+    height: auto;
+    &-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform: inherit;
+      box-shadow: none;
+      border: none;
+      overflow: inherit;
+    }
+    &-item {
+      display: block;
+      width: 100%;
+      height: auto;
+      padding: 0;
+      &--content {
+        width: 100%;
+        padding: 2rem 2.2rem;
+        text-align: center;
+      }
+      &:nth-child(3) {
+        order: 4;
+      }
+      &:nth-child(4) {
+        order: 3;
+      }
+    }
+  }
+  .services {
+    height: auto;
+    padding: 2rem 2.5rem;
+    &-header {
+      width: 100%;
+    }
+    &-picture-list {
+      align-items: center;
+      flex-direction: column;
+    }
+    &-picture-items:not(:first-child):not(:last-child) {
+      margin: 1.5rem 0;
+      height: auto;
+    }
+    &-picture-items:first-child, &-picture-items:last-child {
+      margin: 0;
+      height: auto;
+    }
+    &-footer {
+      width: 100%;
+      text-align: center;
+      padding: 1.2rem 2rem 0 2rem;
+    }
+  }
+  .contact {
+    height: auto;
+    display: block;
+    padding: 2rem 2.5rem;
+    &-body {
+      width: auto;
+      flex-direction: column;
+      &--items {
+        width: 100%;
+        height: auto;
+        min-height: 50vh;
+        text-align: center;
+        &-title {
+          justify-content: center;
+          flex-direction: column;
+        }
+        .paragraph {
+          font-size: 1.5rem;
+        }
       }
     }
   }

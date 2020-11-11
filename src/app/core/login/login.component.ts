@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { debounceTime, first } from 'rxjs/operators';
-import { AuthenticationService, AlertService } from '@app/shared/common/_service';
+import { AuthenticationService } from '@app/shared/common/_service';
 
 @Component({
   selector: 'app-login',
@@ -35,18 +35,15 @@ export class LoginComponent implements OnInit {
   constructor(
     private authenticationService: AuthenticationService,
     private activatedRouter: ActivatedRoute,
-    private router: Router,
-    private alertService: AlertService
+    private router: Router
   ) { }
 
   ngOnInit() {
-    // redirect user to home page if user has logged in.
     if (this.authenticationService.getCurrentUser()) {
       this.router.navigate(['/web/welcome-fitness']);
     }
     this.createForm();
 
-    // get returnUrl from router params or default to '/home'
     this.returnUrl = this.activatedRouter.snapshot.queryParams.returnUrl || '/welcome-fitness';
   }
 
@@ -63,7 +60,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    // stopped if login form is invalid
     if (this.loginForm.invalid) {
       return;
     }
@@ -79,9 +75,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         }
       }, error => {
-        // call alert service to emit error message.
         this.loginForm.setErrors({ usernameOrPasswordIncorrect: error });
-        // this.alertService.error(error, false);
         this.loading = false;
       });
   }

@@ -1,8 +1,18 @@
-:host .menu-spacer {
+:host ::ng-deep
+.menu-spacer {
   flex: 1 1 auto;
 }
 .mat-toolbar {
   background-color: white;
+  .web-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+  mat-icon {
+    margin-right: 1rem;
+  }
   .mat-toolbar-row {
     padding-right: 0;
     .logout {
@@ -42,5 +52,46 @@
   }
   &:hover {
     background-color: rgb(223, 101, 150);
+  }
+}
+
+@media (min-width: 1024px) {
+  .mat-toolbar-xs, .mat-toolbar-md {
+    display: none;
+  }
+  .mat-toolbar-lg {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .mat-toolbar-xs, .mat-toolbar-lg {
+    display: none;
+  }
+  .mat-toolbar-md {
+    display: block;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 576px) {
+  .mat-toolbar-lg, .mat-toolbar-md {
+    display: none;
+  }
+  .mat-toolbar {
+    .mat-toolbar-row:first-child {
+      padding: 0;
+      text-align: center;
+    }
+    .mat-toolbar-row:not(:first-child) {
+      justify-content: space-between;
+    }
+    .mat-button {
+      padding: 0;
+      margin: 0;
+    }
+    .btn-join-container {
+      flex: 1;
+      display: block;
+      align-items: inherit;
+    }
   }
 }

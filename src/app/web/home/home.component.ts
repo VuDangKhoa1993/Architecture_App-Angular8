@@ -1,6 +1,6 @@
 import { Observable, throwError, BehaviorSubject } from 'rxjs';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { filter, catchError, tap } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { catchError, tap } from 'rxjs/operators';
 import { User, AlertService, UserService, AuthenticationService } from '@app/shared/common';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
@@ -10,7 +10,10 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+<<<<<<< HEAD
   loading = false;
+=======
+>>>>>>> feature/refactor-structure-app
   currentUser$: Observable<User>;
   userFromApi$: Observable<User>;
   contactData$: any;
