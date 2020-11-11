@@ -5,8 +5,6 @@
     <p>Your role is: <strong>{{(currentUser$ | async)?.role}}</strong>.</p>
     <p>This page can be accessed by <u>all authenticated users</u>.</p>
     <p class="mb-1">Current user from secure api end point:</p>
-    <div *ngIf="(userFromApi$ | async) ? loading === false : loading === true" class="spinner-border spinner-border-sm">
-    </div>
     <ul *ngIf="(userFromApi$ | async) as userFromApi">
       <li>{{userFromApi.firstName}} {{userFromApi.lastName}}</li>
     </ul>
@@ -20,9 +18,9 @@
   </div>
 </div>
 
-<div class="row"> 
+<div class="row">
   <div class="col-12">
-    <button class="btn btn-success btn-outline" (click)="changeContact()">Change Contact</button>  
+    <button class="btn btn-success btn-outline" (click)="changeContact()">Change Contact</button>
     <app-contact [contact$]="contactData$"></app-contact>
   </div>
 </div>

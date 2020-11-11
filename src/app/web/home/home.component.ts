@@ -10,7 +10,6 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  loading: false;
   currentUser$: Observable<User>;
   userFromApi$: Observable<User>;
   contactData$: any;
