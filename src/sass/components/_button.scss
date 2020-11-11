@@ -102,6 +102,9 @@
     text-align: center;
     text-transform: capitalize;
     transition: all 0.3s;
+    @media (max-width: 767px) {
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -147,6 +150,9 @@
     background-color: #fff;
     border: 2px solid #fff;
     color: #000;
+    @media (max-width: 767px) {
+      padding: 1rem 1.5rem;
+    }
   }
   &:hover {
     background-color: transparent;

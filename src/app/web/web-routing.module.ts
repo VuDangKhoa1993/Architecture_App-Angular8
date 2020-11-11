@@ -10,40 +10,35 @@ import { WelcomeFitnessComponent } from './welcome-fitness';
 const routes: Routes = [
   {
     path: '',
-    children: [
-      {
-        path: '',
-        redirectTo: 'welcome-fitness',
-        pathMatch: 'full'
-      },
-      {
-        path: 'home',
-        component: HomeComponent,
-        canActivate: [AuthGuard],
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent,
-        // canActivate: [AuthGuard]
-      },
-      {
-        path: 'admin',
-        component: AdminComponent,
-        data: {
-          roles: Role.Admin
-        },
-        // loadChildren: '',
-        // if admin module exist then canActivateChild will be run.
-        canActivate: [AuthGuard],
-        canActivateChild: [AuthGuard]
-      },
-      {
-        path: 'welcome-fitness',
-        component: WelcomeFitnessComponent,
-        canActivate: [AuthGuard]
-      }
-    ]
+    redirectTo: 'welcome-fitness',
+    pathMatch: 'full'
   },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    data: {
+      roles: Role.Admin
+    },
+    // loadChildren: '',
+    // if admin module exist then canActivateChild will be run.
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard]
+  },
+  {
+    path: 'welcome-fitness',
+    component: WelcomeFitnessComponent,
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({

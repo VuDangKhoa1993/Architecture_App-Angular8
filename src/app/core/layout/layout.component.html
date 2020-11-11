@@ -2,7 +2,7 @@
     <div class="position-fixed-header">
       <app-toolbar [currentUser]="currentUser" (toggle)="toggleSideBar($event)" (logout)="logout()"></app-toolbar>
     </div>
-    <app-sidenav #sidebar [currentUser]="currentUser">
+    <app-sidenav #sidebar [currentUser]="currentUser" (logout)="logout()">
       <div class="container-fluid px-0">
           <app-alert></app-alert>
           <router-outlet></router-outlet>

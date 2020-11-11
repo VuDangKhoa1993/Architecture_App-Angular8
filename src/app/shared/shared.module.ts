@@ -27,6 +27,7 @@ import { AnimateDirective } from './common/_directive/animate.directive';
 import { ScrollToViewDirective } from './common/_directive/scroll-to-view.directive';
 import { ValidInputComponent } from './common/_component/valid-input/valid-input.component';
 import { BackgroundAnimateDirective } from './common/_directive/background-animation.directive';
+import { TextareaExpandComponent } from './common/_component/textarea-expand/textarea-expand.component';
 
 const MaterialModules = [
   MatSliderModule,
@@ -42,7 +43,8 @@ const MaterialModules = [
 const components = [
   AlertComponent,
   RatingInputComponent,
-  ValidInputComponent
+  ValidInputComponent,
+  TextareaExpandComponent
 ];
 
 const directives = [
@@ -65,7 +67,7 @@ const AngularModules = [
 @NgModule({
   declarations: [
     ...directives,
-    ...components
+    ...components,
   ],
   imports: [
     CommonModule,
