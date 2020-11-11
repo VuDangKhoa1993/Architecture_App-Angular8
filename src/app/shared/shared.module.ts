@@ -5,6 +5,7 @@ import {
   JWTInterceptor,
   fakeBackendProvider,
   PasswordMatchingValidatorDirective,
+  SlideShowDirective,
 } from './common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -52,7 +53,8 @@ const directives = [
   AnimateDirective,
   ScrollToViewDirective,
   PasswordMatchingValidatorDirective,
-  BackgroundAnimateDirective
+  BackgroundAnimateDirective,
+  SlideShowDirective
 ];
 
 const AngularModules = [
