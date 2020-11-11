@@ -4,35 +4,13 @@ import { filter, catchError, tap } from 'rxjs/operators';
 import { User, AlertService, UserService, AuthenticationService } from '@app/shared/common';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
-class MyProvider {
-  constructor() {
-    console.log('This is my provider');
-  }
-
-  myProviderName = 'My Provider';
-}
-
-class MyProviderV2 {
-  constructor() {
-    console.log('This is my provider v2');
-  }
-
-  name = 'my provider v2';
-
-  getProviderName() {
-    return this.name;
-  }
-}
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  exportAs: 'MyHomeComponent',
-  viewProviders: [MyProvider, MyProviderV2]
 })
 export class HomeComponent implements OnInit {
-  loading: false;
+  loading = false;
   currentUser$: Observable<User>;
   userFromApi$: Observable<User>;
   contactData$: any;
@@ -70,8 +48,6 @@ export class HomeComponent implements OnInit {
     private userService: UserService,
     private alertService: AlertService,
     private authenticationService: AuthenticationService,
-    private myProvider: MyProvider,
-    private myProviderV2: MyProviderV2
   ) { }
 
   ngOnInit() {
@@ -87,9 +63,6 @@ export class HomeComponent implements OnInit {
         return throwError(error);
       })
     );
-
-    console.log(this.myProvider.myProviderName);
-    console.log(this.myProviderV2.getProviderName());
 
     this.contactData$ = new BehaviorSubject({
       phone: '03244611633',
