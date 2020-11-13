@@ -52,7 +52,6 @@ export class SlideShowDirective implements OnChanges {
   }
 
   public plusImage(index) {
-    // index = 4
     this.slideIndex += index;
     this.show(this.slideIndex);
   }

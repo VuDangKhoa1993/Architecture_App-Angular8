@@ -1,0 +1,51 @@
+:host
+.image-slider-show {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s linear;
+  width: 100%;
+}
+
+.image-slider-show.active {
+  animation: fade 1s;
+  visibility: visible;
+  opacity: 1;
+}
+
+button {
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  background: transparent;
+  border: none;
+  font-size: 3rem;
+  color: #000;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    color: #fff;
+  }
+  &:focus {
+    outline: none;
+  }
+  &.btn-arrow-left {
+    left: 0;
+  }
+  &.btn-arrow-right {
+    right: 0;
+  }
+}
+
+.slider-content {
+  position: relative;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

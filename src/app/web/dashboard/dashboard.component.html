@@ -1,12 +1,9 @@
 <h2 class="w3-center">Manual Slideshow</h2>
-<div class="w3-content w3-display-container" appSlideShow [imageRefs]="_imageRefs">
-  <img #image class="mySlides"
-    src="https://image.shutterstock.com/image-photo/interior-view-gym-equipment-260nw-171134858.jpg">
-  <img #image class="mySlides" src="https://thumbs.dreamstime.com/b/interior-modern-gym-28572489.jpg">
-  <img #image class="mySlides" src="https://media-cdn.tripadvisor.com/media/photo-s/0a/a1/36/8a/fitness-center.jpg">
-  <img #image class="mySlides" src="https://www.bbt.com.vn/wp-content/uploads/2020/05/3.-Lung_Quan9-Toan.jpg">
-</div>
-<div>
-  <button id="increase" class="w3-button w3-black w3-display-left" (click)="plusImage(-1)">&#10094;</button>
-  <button id="decrease" class="w3-button w3-black w3-display-right" (click)="plusImage(1)">&#10095;</button>
-</div>
+<app-slider-show>
+  <img #myImage class="image-slider-show" src="https://image.shutterstock.com/image-photo/interior-view-gym-equipment-260nw-171134858.jpg">
+  <img #myImage class="image-slider-show" src="https://thumbs.dreamstime.com/b/interior-modern-gym-28572489.jpg">
+  <img #myImage class="image-slider-show" src="https://media-cdn.tripadvisor.com/media/photo-s/0a/a1/36/8a/fitness-center.jpg">
+  <img #myImage class="image-slider-show" src="https://www.bbt.com.vn/wp-content/uploads/2020/05/3.-Lung_Quan9-Toan.jpg">
+  <button #btnArrowLeft class="btn-arrow-left" >&#10094;</button>
+  <button #btnArrowRight class="btn-arrow-right" >&#10095;</button>
+</app-slider-show>

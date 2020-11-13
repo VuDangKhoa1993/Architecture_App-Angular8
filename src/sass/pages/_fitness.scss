@@ -95,6 +95,13 @@
       text-align: center;
     }
   }
+  app-slider-show {
+    display: none;
+    img {
+      width: auto;
+      height: 30rem;
+    }
+  }
   &-picture-list {
     display: flex;
     width: 100%;
@@ -115,7 +122,8 @@
     }
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
       transition: all 0.8s;
       &:hover {
         transform: scale(1.1);
@@ -246,7 +254,15 @@
     &-header {
       width: 100%;
     }
+    app-slider-show {
+      display: block;
+      img {
+        width: auto;
+        height: 30rem;
+      }
+    }
     &-picture-list {
+      display: none;
       align-items: center;
       flex-direction: column;
     }
