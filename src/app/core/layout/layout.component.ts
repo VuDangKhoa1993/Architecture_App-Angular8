@@ -11,7 +11,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 })
 export class LayoutComponent implements OnInit {
   public currentUser$: Observable<User>;
-  @ViewChild('sidebar') sidebar: SidenavComponent;
+  @ViewChild('sidebar', { static: false }) sidebar: SidenavComponent;
 
   constructor(
     private authenticationService: AuthenticationService,

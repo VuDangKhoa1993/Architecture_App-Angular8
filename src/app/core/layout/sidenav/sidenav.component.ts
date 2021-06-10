@@ -10,7 +10,7 @@ export class SidenavComponent implements OnInit {
   // tslint:disable-next-line: no-input-rename
   @Input('currentUser') currentUser: User;
   @Output() logout = new EventEmitter<any>();
-  @ViewChild('sidenav') sidenav: any;
+  @ViewChild('sidenav', { static: true }) sidenav: any;
   admin = Role.Admin;
   constructor() { }
 
