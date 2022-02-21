@@ -22,8 +22,10 @@ export class AuthenticationService {
   }
 
   login(username, password): Observable<any> {
+    debugger
     return this.httpClient.post<any>(`${environment.apiUrl}/users/authenticate`, { username, password }).pipe(
       map((user: User) => {
+
         // login successful if there's a jwt token in the response
         if (user && user.token) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes

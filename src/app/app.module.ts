@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './core/app/app.component';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SpreadSheetsModule } from "./spread-sheets-angular/gc.spread.sheets.angular";
 
 @NgModule({
   declarations: [
@@ -13,9 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     CoreModule,
     BrowserAnimationsModule,
-  ],
-  exports: [
-    BrowserAnimationsModule
+    SpreadSheetsModule,
   ],
   bootstrap: [AppComponent]
 })
