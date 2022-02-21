@@ -27,7 +27,7 @@ const routes: Routes = [
   {
     path: 'web',
     component: LayoutComponent,
-    loadChildren: './web/web.module#WebModule',
+    loadChildren: () => import('./web/web.module').then(m => m.WebModule),
     data: { preload: true },
   },
   {

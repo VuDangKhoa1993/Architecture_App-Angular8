@@ -15,7 +15,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class TextareaExpandComponent implements ControlValueAccessor {
   // @ViewChild('textarea', { read: true }) textarea: ElementRef<HTMLAreaElement>;
-  @ViewChild('textarea') textarea;
+  @ViewChild('textarea', { static: true }) textarea;
 
   constructor(
     private renderer2: Renderer2
