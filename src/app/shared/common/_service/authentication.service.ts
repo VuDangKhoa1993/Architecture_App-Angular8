@@ -22,7 +22,6 @@ export class AuthenticationService {
   }
 
   login(username, password): Observable<any> {
-    debugger
     return this.httpClient.post<any>(`${environment.apiUrl}/users/authenticate`, { username, password }).pipe(
       map((user: User) => {
 

@@ -75,7 +75,6 @@ export class LoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         }
       }, error => {
-        debugger
         this.loginForm.setErrors({ usernameOrPasswordIncorrect: error });
         this.loading = false;
       });
