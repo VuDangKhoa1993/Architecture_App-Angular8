@@ -45,8 +45,7 @@
                 "src",
                 "src/sass/abstracts"
               ]
-            },
-            "es5BrowserSupport": true
+            }
           },
           "configurations": {
             "production": {
