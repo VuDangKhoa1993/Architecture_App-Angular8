@@ -9,7 +9,8 @@
     "e2e": "ng e2e",
     "start": "webpack-dev-server --mode development --open",
     "deploy": "sh ./deploy-surge.sh",
-    "heroku-postbuild": "ng build --aot --configuration production"
+    "heroku-postbuild": "ng build --aot --configuration production",
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +19,7 @@
     "@angular/common": "~12.2.16",
     "@angular/compiler": "~12.2.16",
     "@angular/core": "~12.2.16",
+    "@angular/fire": "^7.2.1",
     "@angular/forms": "~12.2.16",
     "@angular/material": "^12.2.13",
     "@angular/platform-browser": "~12.2.16",
@@ -33,14 +35,13 @@
     "firebase": "^9.6.7",
     "jquery": "^3.4.1",
     "rxjs": "~6.6.7",
-    "surge": "^0.21.6",
-    "tslib": "^2.0.0",
+    "surge": "^0.20.1",
     "typescript": "4.3.5",
-    "xlsx": "^0.15.1",
+    "xlsx": "^0.18.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.2.16",
+    "@angular-devkit/build-angular": "^13.2.4",
     "@angular/cli": "^12.2.16",
     "@angular/compiler-cli": "~12.2.16",
     "@angular/language-service": "~12.2.16",
@@ -49,7 +50,7 @@
     "@types/node": "^12.11.1",
     "angular2-template-loader": "^0.6.2",
     "codelyzer": "^6.0.0",
-    "css-loader": "^3.2.0",
+    "css-loader": "^6.6.0",
     "enhanced-resolve": "^3.3.0",
     "html-webpack-plugin": "^3.2.0",
     "jasmine-core": "~3.6.0",
@@ -66,9 +67,10 @@
     "style-loader": "^1.0.0",
     "ts-loader": "^5.4.5",
     "ts-node": "~7.0.0",
+    "tslib": "^2.3.1",
     "tslint": "~6.1.0",
-    "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.8.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
   },
   "engines": {
     "node": "12.16.1",

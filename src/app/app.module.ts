@@ -5,16 +5,18 @@ import { AppComponent } from './core/app/app.component';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpreadSheetsModule } from "./spread-sheets-angular/gc.spread.sheets.angular";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    CoreModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
     SpreadSheetsModule,
+    CoreModule
   ],
   bootstrap: [AppComponent]
 })

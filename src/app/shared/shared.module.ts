@@ -56,7 +56,6 @@ const directives = [
 const AngularModules = [
   FormsModule,
   ReactiveFormsModule,
-  HttpClientModule,
   SpreadSheetsModule,
   DragDropModule
 ];
@@ -69,8 +68,8 @@ const AngularModules = [
   ],
   imports: [
     CommonModule,
+    ...MaterialModules,
     ...AngularModules,
-    ...MaterialModules
   ],
   providers: [
     {
@@ -87,8 +86,8 @@ const AngularModules = [
   ],
   exports: [
     ...AngularModules,
-    ...components,
     ...MaterialModules,
+    ...components,
     ...directives,
   ],
 })
